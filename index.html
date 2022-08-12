@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pl PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmet próby</title>
+  </head>
+  <body>
+    <!-- Jeśli wcisnę p i kliknę tab to pojawi się od razu paragraf. Podobnie z div. jeśli chcę, żeby div był klasy lub id, to dodaję div.klasa. div jest też domyślną klasą, więc jeśli dam tylko .klasa (np. .box) i tabulator, doda mi diva o klasie box -->
+    <p></p>
+    <div></div>
+    <div class="box"></div>
+    <p class="box"></p>
+    <ul></ul>
+    <li></li>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure temporibus
+    modi cupiditate alias enim saepe, pariatur asperiores omnis, eligendi,
+    laudantium laborum! Natus in praesentium repudiandae esse quisquam,
+    reiciendis doloribus adipisci.
+    <!-- żeby zagnieżdżać elementy, wstawiamy nawias trójkątny, żeby zrobić "dziecko"  -->
+    <!-- div>ul>li*5>a[href="photo"] -->
+    !
+    <div>
+      <ul>
+        <li><a href="photo"></a></li>
+        <li><a href="photo"></a></li>
+        <li><a href="photo"></a></li>
+        <li><a href="photo"></a></li>
+        <li><a href="photo"></a></li>
+      </ul>
+    </div>
+    <!-- Jeśli dodamy do photo -$ to będzie liczył kolejno div>ul>li*5>a[href="photo-$"] -->
+    <div>
+      <ul>
+        <li><a href="photo-1"></a></li>
+        <li><a href="photo-2"></a></li>
+        <li><a href="photo-3"></a></li>
+        <li><a href="photo-4"></a></li>
+        <li><a href="photo-5"></a></li>
+      </ul>
+    </div>
+    <!-- Jeśli chcemy, żeby zamiast jednej liczb były dwie (01 02 03) to zamiast jednego dolara dodajemy dwa div>ul>li*5>a[href="photo-$"] Dodatkowo jeśli chcemy, żeby od razu dodawał opis, który będzie przenosił do linku, trzeba dodać nawias klamrowy i w nim opis div>ul>li*5>a[href="photo-$"]{Link do photo nr $} -->
+    <div>
+      <ul>
+        <li><a href="photo-1">Link do photo nr 1</a></li>
+        <li><a href="photo-2">Link do photo nr 2</a></li>
+        <li><a href="photo-3">Link do photo nr 3</a></li>
+        <li><a href="photo-4">Link do photo nr 4</a></li>
+        <li><a href="photo-5">Link do photo nr 5</a></li>
+      </ul>
+    </div>
+    <!-- Jeśli chcemy jeszcze jeden link, który np będzie mówił linki do moich zdjęć to trzeba dodać plusa czyli bliźniaka div>ul>li{Linki do moich zdjęć}+li*5>a[href="photo-$"]{Link do photo nr $} -->
+    <div>
+      <ul>
+        <li>Linki do moich zdjęć</li>
+        <li><a href="photo-1">Link do photo nr 1</a></li>
+        <li><a href="photo-2">Link do photo nr 2</a></li>
+        <li><a href="photo-3">Link do photo nr 3</a></li>
+        <li><a href="photo-4">Link do photo nr 4</a></li>
+        <li><a href="photo-5">Link do photo nr 5</a></li>
+      </ul>
+    </div>
+    <!-- div>p{lorem ipsum}+p.dolor{dolor sit amet}+ul>li*2>a[href="doc $"]{dokument nr $} -->
+    <div>
+      <p>lorem ipsum</p>
+      <p class="dolor">dolor sit amet</p>
+      <ul>
+        <li><a href="doc 1">dokument nr 1</a></li>
+        <li><a href="doc 2">dokument nr 2</a></li>
+      </ul>
+    </div>
+    <!-- Strzałka w górę (^) przenosi o jeden poziom do góry. Ilość strzałek oznacza jak wysoko na wrócić poziom. Z poziomu li wracamy do poziomu h1+p+div i dodajemy   div>div>h1+p+div.list>ul>li^^h2 -->
+    <div>
+      <div>
+        <h1></h1>
+        <p></p>
+        <div class="list">
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+        <h2></h2>
+      </div>
+    </div>
+    <!-- body>header>h1{Witam na mojej stronie}>div.opis{lorem ipsum}{opis mojej strony}>ul.list>li*5>a[href=link$]{Link do $}^^^^h2{Tutaj kolejny h2}>p.drugi{drugi paragraf}^^footer>address>ul>li{jeden}+li{dwa}+li#trzy{trzy} -->
+    <body>
+      <header>
+        <h1>
+          Witam na mojej stronie
+          <div class="opis">lorem ipsum</div>
+          opis mojej strony
+          <ul class="list">
+            <li><a href="link1">Link do 1</a></li>
+            <li><a href="link2">Link do 2</a></li>
+            <li><a href="link3">Link do 3</a></li>
+            <li><a href="link4">Link do 4</a></li>
+            <li><a href="link5">Link do 5</a></li>
+          </ul>
+        </h1>
+        <h2>
+          Tutaj kolejny h2
+          <p class="drugi">drugi paragraf</p>
+        </h2>
+      </header>
+      <footer>
+        <address>
+          <ul>
+            <li>jeden</li>
+            <li>dwa</li>
+            <li id="trzy">trzy</li>
+          </ul>
+        </address>
+      </footer>
+    </body>
+    <!-- div.class1.class2#id1 -->
+    <div class="class1 class2" id="id1"></div>
+    <!-- link -->
+    <link rel="stylesheet" href="" />
+    <!-- button[type="button"] -->
+    <button type="button"></button>
+    <!-- [data-selected] -->
+    <div data-selected=""></div>
+    <!--  [data-selected].active -->
+    <div data-selected="" class="active"></div>
+    <!-- div.purple>span#indiwidualny>ul>li^a{podpis}+p{paragraf} -->
+    <div class="purple">
+      <span id="indiwidualny">
+        <ul>
+          <li></li>
+        </ul>
+        <a href="">podpis</a>
+        <p>paragraf</p>
+      </span>
+    </div>
+    <!-- tabem się przenosimy do kolejnego niewypełnionego elementu -->
+    <!-- Ubranie w okrągłe nawiasy sprawia, że tylko dany znacznik/znaczniki są dzieckiem i automatycznie wraca o poziom w górę (header>nav)+main+footer -->
+    <header>
+      <nav></nav>
+    </header>
+    <main></main>
+    <footer></footer>
+    <!-- (header>h2{heading}+nav>ol>li.number$*3>a[href="link$"]{Link $})+main+footer -->
+    <header>
+      <h2>heading</h2>
+      <nav>
+        <ol>
+          <li class="number1"><a href="link1">Link 1</a></li>
+          <li class="number2"><a href="link2">Link 2</a></li>
+          <li class="number3"><a href="link3">Link 3</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main></main>
+    <footer></footer>
+
+    <!-- form:post>.group>input i jak to wpiszemy tosamo się podświetli np. button -->
+    <form action="" method="post">
+      <div class="group"><input type="button" value="" /></div>
+    </form>
+    <!-- form:post>(.group>label+input:text)+(.group>label+input:number) -->
+    <form action="" method="post">
+      <div class="group">
+        <label for=""></label><input type="text" name="" id="" />
+      </div>
+      <div class="group">
+        <label for=""></label><input type="number" name="" id="" />
+      </div>
+    </form>
+    <!-- section#intro>.container>h2.section-title.text-accent{zawartość h2}+p.section-subtitle+.row>.col*3>h3+p*2 -->
+    <section id="intro">
+      <div class="container">
+        <h2 class="section-title text-accent">zawartość h2</h2>
+        <p class="section-subtitle"></p>
+        <div class="row">
+          <div class="col">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+          <div class="col">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+          <div class="col">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- .wrapper#$*3-->
+    <div class="wrapper" id="1"></div>
+    <div class="wrapper" id="2"></div>
+    <div class="wrapper" id="3"></div>
+    <!-- ul>li*3>a -->
+    <ul>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+    </ul>
+    <!-- header.primary-header>.container>img.logo+nav>ul>li*5>a{$} -->
+    <header class="primary-header">
+      <div class="container">
+        <img src="" alt="" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- section#intro>.container>h2.section-title.text-accent+p.section-subtitle+.row>.col*3>h3+p*2 -->
+    <section id="intro">
+      <div class="container">
+        <h2 class="section-title text-accent"></h2>
+        <p class="section-subtitle"></p>
+        <div class="row">
+          <div class="col">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+          <div class="col">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+          <div class="col">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <!-- link:css -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- p>lorem500 -->
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam sed illo
+    numquam modi repellat, rem suscipit pariatur porro? Rerum deserunt
+    cupiditate non ipsum, saepe, eligendi quis culpa consequuntur temporibus
+    fugit sequi ab hic in praesentium, amet enim dignissimos placeat perferendis
+    earum est recusandae minus? Facere totam adipisci voluptatibus, molestias
+    officiis libero est, aliquid impedit ipsa ipsum et labore, quasi consequatur
+    commodi ipsam quam sequi laboriosam ratione quibusdam eius? Deleniti
+    expedita amet nemo neque architecto magni iure ratione veniam facere
+    voluptatum iste assumenda est, beatae quae aliquid delectus! Nam eveniet
+    nostrum quos, alias fugit recusandae molestiae fugiat saepe facere repellat
+    sequi, dolores dignissimos! Amet officia suscipit non minima ipsa error at
+    reprehenderit aspernatur laboriosam, odio maiores labore quos consequuntur
+    nostrum voluptas sequi. Impedit totam earum, aspernatur nam, modi sed sequi
+    culpa cupiditate asperiores dignissimos non deleniti illum at, iste
+    recusandae explicabo doloremque animi quaerat! Provident, incidunt
+    veritatis. Molestias cum, odio quos temporibus quia eos corrupti, doloremque
+    nam odit aliquid commodi incidunt repellat, corporis vel repudiandae in.
+    Sequi, fugiat accusantium eius, repellat quod quibusdam facere minus,
+    facilis enim at officia nisi deserunt repudiandae! Quod similique est
+    repellat fugiat inventore culpa accusantium temporibus, ex deleniti magni
+    sapiente placeat mollitia maxime doloremque, delectus rem ratione natus
+    atque voluptates, eius omnis eaque quae? Laudantium tenetur, illo deleniti
+    non sunt architecto quaerat! Voluptas nihil corporis, nulla, quos quasi
+    tempora reiciendis saepe eveniet vero aspernatur rem iusto ipsa eos vitae
+    dignissimos culpa, sequi tenetur atque? Velit eligendi quidem aspernatur ad
+    magni in accusantium commodi asperiores quis recusandae nobis et, maxime
+    delectus cumque, sint explicabo. Numquam laboriosam omnis sapiente quas,
+    quod consectetur! Cumque repellendus harum blanditiis nulla voluptate, ipsum
+    vero, magni, reiciendis sint deserunt labore nobis ea possimus eius
+    inventore quia veniam quisquam corporis iste a eligendi illum. Officia cum
+    facilis facere fugit odio doloribus, ipsa illum molestias consequatur iusto
+    possimus modi optio ab fugiat iste minima quidem, ex pariatur cupiditate!
+    Hic explicabo iusto consequuntur excepturi est reiciendis atque iure,
+    commodi perferendis praesentium vel modi laudantium, laborum cum accusamus
+    dignissimos eius quisquam, maiores ex possimus quae corporis inventore.
+    Laborum libero earum enim at? Dolore, modi pariatur placeat omnis ullam
+    perspiciatis autem eaque quia accusantium non laboriosam impedit enim vero
+    quos, voluptatem minus nesciunt veniam ratione voluptates quasi cupiditate!
+    Ducimus obcaecati hic doloremque deleniti optio repellendus quaerat debitis
+    officiis. Ducimus iure, expedita vel deserunt provident inventore
+    repudiandae hic, enim corporis sint ratione! Ea officiis tempore aliquam
+    corporis provident, excepturi modi illo praesentium repudiandae amet alias
+    facere qui, maiores earum nulla ullam. Laudantium, temporibus inventore
+    tempora quia unde officia minus laboriosam alias! Tenetur porro sunt dolore,
+    cupiditate rem vero velit minima harum nesciunt aspernatur? Magni laudantium
+    tenetur iure velit! Odit fugiat ex ipsum repudiandae accusantium atque, sed
+    autem pariatur aliquam similique numquam consequuntur dolore reiciendis
+    ducimus dolores praesentium eum voluptas aliquid iure deleniti, tempore
+    recusandae, iste vel tenetur? Fugiat, sequi labore excepturi omnis molestias
+    error? Nisi rerum nesciunt quo nulla? Provident delectus magni id natus
+    laudantium amet non illo, officia dolorem ab consectetur sapiente. Possimus
+    eum laborum itaque quasi quas?
+  </p>
+</html>
